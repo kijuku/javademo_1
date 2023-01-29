@@ -21,6 +21,16 @@ public class Trigonometria {
         alpha = Math.toDegrees(Math.asin(aCat/cHyp));
     }
 
+    
+    // Pythagoras - method
+    // Attributes:
+    //      String:     unknow  - Example "a"
+    //      double:     val1    - Example 2.0
+    //      double:     val2    - Example 6.0
+    //
+    // Return value:
+    //      double:     value   - Calculate unknown tringle side
+    //******************************************/
     public double Pythagoras(String unknown, double val1, double val2){
         double value = 0.0;
         if (unknown.equals("a") || unknown.equals("b") ){
