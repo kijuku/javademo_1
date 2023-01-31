@@ -1,6 +1,7 @@
 package main;
 
 import java.lang.Math;
+import java.text.DecimalFormat;
 
 public class Trigonometria {
     private double aCat;
@@ -57,28 +58,78 @@ public class Trigonometria {
         }
     }
 
+
+    public double getACat() {
+        return this.aCat;
+    }
+
+    public void setACat(double aCat) {
+        this.aCat = aCat;
+    }
+
+    public double getBCat() {
+        return this.bCat;
+    }
+
+    public void setBCat(double bCat) {
+        this.bCat = bCat;
+    }
+
+    public double getCHyp() {
+        return this.cHyp;
+    }
+
+    public void setCHyp(double cHyp) {
+        this.cHyp = cHyp;
+    }
+
+    public double getAlpha() {
+        return this.alpha;
+    }
+
+    public void setAlpha(double alpha) {
+        this.alpha = alpha;
+    }
+
+    public double getBeta() {
+        return this.beta;
+    }
+
+    public void setBeta(double beta) {
+        this.beta = beta;
+    }
+
+    public double getGamma() {
+        return this.gamma;
+    }
+
+    public void setGamma(double gamma) {
+        this.gamma = gamma;
+    }
+
     // toString - method with command attribute
     //******************************************/
     public String toString(String command){
+        DecimalFormat df = new DecimalFormat("#.###");
         String s = "";
         switch (command){
             case "sin":
                 s += "Sini:\n";
                 s += "sin(alfa) = a : c\n";
-                s += "sin(alfa) = " + this.aCat + " :  " + this.cHyp + "\n";
-                s += "sin(alfa) = " + this.aCat / this.cHyp + "\n";
+                s += "sin(alfa) = " + df.format(getACat()) + " :  " + df.format(getCHyp()) + "\n";
+                s += "sin(alfa) = " + df.format(getACat() / getCHyp()) + "\n";
                 break;
             case "cos":
                 s += "Kosini:\n";
                 s += "cos(alfa) = b : c\n";
-                s += "cos(alfa) = " + this.bCat + " :  " + this.cHyp + "\n";
-                s += "cos(alfa) = " + this.bCat / this.cHyp + "\n";
+                s += "cos(alfa) = " + df.format(getBCat()) + " :  " + df.format(getCHyp()) + "\n";
+                s += "cos(alfa) = " + df.format(getBCat() / getCHyp()) + "\n";
                 break;
             case "tan":
                 s += "Tangetti:\n";
                 s += "tan(alfa) = a : b\n";
-                s += "tan(alfa) = " + this.aCat + " :  " + this.bCat + "\n";
-                s += "tan(alfa) = " + this.aCat / this.bCat + "\n";
+                s += "tan(alfa) = " + df.format(getACat()) + " :  " + df.format(getBCat()) + "\n";
+                s += "tan(alfa) = " + df.format(getACat() / getBCat()) + "\n";
                 break;
             default:
             break;
@@ -90,12 +141,13 @@ public class Trigonometria {
     // toString - method 
     //******************************************/
     public String toString(){
+        DecimalFormat df = new DecimalFormat("#.##");
         String s = "Suorakulmainen kolmio:\n";
-        s += "a: " + this.aCat + " cm\n";
-        s += "b: " + this.bCat + " cm\n";
-        s += "c: " + this.cHyp + " cm\n";
-        s += "alpha: " + Math.round( this.alpha ) + " astetta\n";
-        s += "bata: " + Math.round( this.beta )+ " astetta\n";
+        s += "a: " + df.format(getACat()) + " cm\n";
+        s += "b: " + df.format(getBCat()) + " cm\n";
+        s += "c: " + df.format(getCHyp()) + " cm\n";
+        s += "alpha: " + df.format( getAlpha() ) + " astetta\n";
+        s += "bata: " + df.format( getBeta() )+ " astetta\n";
         return s;
     }
 
