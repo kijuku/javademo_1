@@ -87,6 +87,22 @@ public class App
             " --> v3: " + v3.toString("F3") + 
             " --> ret: " + ret.toString("F3")
             );
+
+        System.out.println(r.mulScalar(2.5f));
+        System.out.println(v3.mulScalar(2.5f));
+        System.out.println(ret.mulScalar(2.5f));
+        System.out.println(ret.mulScalar(v3, 2.5f));
         
+        System.out.println("Pistetulo 1 v3 * r: " + v3.dotProduct(v3,r));
+        
+        System.out.println("Pistetulo 2 ret * r: " + v3.dotProduct(ret,r));
+
+        v3 = ret.crossProduct(ret, v);
+        System.out.println(v3);
+        v3 = ret.crossProduct(ret, r);
+        System.out.println(v3);
+        v3 = ret.crossProduct(r, r);
+        System.out.println(v3);
+           
     }
 }
