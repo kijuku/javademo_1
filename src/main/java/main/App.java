@@ -66,31 +66,79 @@ public class App {
         System.out.println(v3);
 
         Vector3 ret = new Vector3(4, 5, 6);
+        float len = ret.norm();
+        System.out.println("Pituus ret: " + len);
+
         Vector3 r = new Vector3();
+        len = r.norm();
+        System.out.println("Pituus r: " + len);
+        
+
         // Lasketaan vektorit yhteen
         r = v3.add(v3, ret);
         System.out.println(r);
+        len = r.norm();
+        System.out.println("Pituus r: " + len);
+
         r = v3.decrease(v3, ret);
         System.out.println(r);
-
+        len = r.norm();
+        System.out.println("Pituus r: " + len);
+        
         r = v3.decrease(ret, v3);
         System.out.println(r);
+        len = r.norm();
+        System.out.println("Pituus r: " + len);
 
         r = v3.add(ret);
         System.out.println("r: " + r + " --> v3: " + v3 + " --> ret: " + ret);
-
+        len = r.norm();
+        System.out.println("Pituus r: " + len);
+        
         r = v3.decrease(ret);
         System.out.println(
                 "r: " + r.toString("F3") +
                         " --> v3: " + v3.toString("F3") +
                         " --> ret: " + ret.toString("F3"));
-
+                        len = r.norm();
+                        System.out.println("Pituus r: " + len);
         // Kolmio
         Point pp1 = new Point(0, 0, 0);
-        Point pp2 = new Point(5, 0, 0);
-        Point pp3 = new Point(0, 5, 0);
+        Point pp2 = new Point(3, 0, -1);
+        Point pp3 = new Point(0, 4, -1);
         Triangle tri2 = new Triangle("Triangle ABC", pp1, pp2, pp3);
 
         System.out.println(tri2);
+
+        float val = tri2.calculateSides("A");
+        System.out.println("Sivu A: " + val);
+
+        val = tri2.calculateSides("B");
+        System.out.println("Sivu B: " + val);
+
+        val = tri2.calculateSides("C");
+        System.out.println("Sivu C: " + val);
+
+        Vector3 t1 = new Vector3(tri2.getPointA());    
+        Vector3 t2 = new Vector3(tri2.getPointB());
+        Vector3 t3 = new Vector3(tri2.getPointC());
+
+        len = t1.norm();
+        System.out.println("Pituus t1: " + len);
+        len = t2.norm();
+        System.out.println("Pituus t2: " + len);
+        len = t3.norm();
+        System.out.println("Pituus t3: " + len);
+
+        Vector3 t0 = new Vector3();
+        t0 = t2.crossProduct(t2, t3);
+        len = t0.norm();
+        System.out.println("Pituus t0: " + len);
+        System.out.println(t0);
+        System.out.println(t1);
+        System.out.println(t2);
+        System.out.println(t3);
+
+
     }
 }

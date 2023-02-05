@@ -12,6 +12,12 @@ public class Vector3 {
         this.z = 0.0f;
     }
 
+    public Vector3(Point p) {
+        this.x = p.getX();
+        this.y = p.getY();
+        this.z = p.getZ();
+    }
+
     public Vector3(float x, float y, float z) {
         this.x = x;
         this.y = y;

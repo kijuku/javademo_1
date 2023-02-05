@@ -62,6 +62,32 @@ public class Triangle {
         this.pointC = pointC;
     }
 
+    public float length(Point p1, Point p2){
+        
+        float x = (p1.getX() - p2.getX())*(p1.getX() - p2.getX());
+        float y = (p1.getY() - p2.getY())*(p1.getY() - p2.getY());
+        float z = (p1.getZ() - p2.getZ())*(p1.getZ() - p2.getZ());
+        float sum = x+y+z;
+        return (float)(Math.sqrt(sum));
+    }
+
+    public float calculateSides(String name){
+        float val = 0.0f;
+        switch (name){
+            case "A":
+                val = length(pointA, pointB);
+            break;
+            case "B":
+                val = length(pointA, pointC);
+            break;
+            case "C":
+                val = length(pointB, pointC);
+            break;
+        }
+
+        return val;
+    }
+
     public String toString() {
         String s = "";
         s += this.name + ": \n";
