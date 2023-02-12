@@ -1,9 +1,10 @@
 package main;
 
+import java.io.Serializable;
 import java.lang.Math;
 import java.text.DecimalFormat;
 
-public class Trigonometria {
+public class Trigonometria implements Serializable {
     private double aCat;
     private double bCat;
     private double cHyp;

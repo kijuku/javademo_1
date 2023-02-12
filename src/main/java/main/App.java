@@ -1,10 +1,15 @@
 package main;
 
+import java.util.ArrayList;
+
 /**
  * Trigonometria - class using example
  *
  */
 public class App {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Trigonometria - App");
         Trigonometria tri = new Trigonometria();
@@ -66,7 +71,7 @@ public class App {
         System.out.println(v3);
 
         Vector3 ret = new Vector3(4, 5, 6);
-        float len = ret.norm();
+        double len = ret.norm();
         System.out.println("Pituus ret: " + len);
 
         Vector3 r = new Vector3();
@@ -110,7 +115,7 @@ public class App {
 
         System.out.println(tri2);
 
-        float val = tri2.calculateSides("A");
+        double val = tri2.calculateSides("A");
         System.out.println("Sivu A: " + val);
 
         val = tri2.calculateSides("B");
@@ -139,6 +144,48 @@ public class App {
         System.out.println(t2);
         System.out.println(t3);
 
+        // Square test
 
+        ArrayList<Point> corner = new ArrayList<Point>();
+        
+   //     for (int p = 0; p < 4; p++){
+   //         corner.add(new Point(0, 0, 0));
+   //     }
+        
+        corner.add(0, new Point(0, 0, 0));
+        
+        corner.add(1, new Point(5, 0, 0));
+        
+        corner.add(2, new Point(0, 5, 0));
+
+        corner.add(3, new Point(5, 5, 0));
+
+        Calculator calc = new Calculator();
+
+        Square square = new Square(corner,"Square 1");
+        System.out.println(square);
+        System.out.println("Area: " + calc.area(square) + "");
+        System.out.println("Perimeter: " + calc.perimeter(square) + "");
+
+        ArrayList<Point> corner2 = new ArrayList<Point>();
+        
+        //     for (int p = 0; p < 4; p++){
+        //         corner.add(new Point(0, 0, 0));
+        //     }
+             
+             corner2.add(0, new Point(0, 0, 0));
+             
+             corner2.add(1, new Point(10, 0, -1));
+             
+             corner2.add(2, new Point(0, 5, 0));
+     
+             corner2.add(3, new Point(10, 5, -1));
+     
+             Calculator calc2 = new Calculator();
+     
+             Square square2 = new Square(corner2,"Square 2");
+             System.out.println(square2);
+             System.out.println("Area: " + calc2.area(square2) + "");
+             System.out.println("Perimeter: " + calc2.perimeter(square2) + "");
     }
 }

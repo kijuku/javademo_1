@@ -1,10 +1,12 @@
 package main;
 
-public class Transform {
+import java.io.Serializable;
+
+public class Transform implements Serializable {
     String name;
     Point p;
 
-    public Transform(String name, float x, float y, float z) {
+    public Transform(String name, double x, double y, double z) {
         this.name = name;
         this.p = new Point(x,y,z);
     }

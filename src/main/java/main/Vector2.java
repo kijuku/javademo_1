@@ -1,6 +1,8 @@
 package main;
 
-public class Vector2 {
+import java.io.Serializable;
+
+public class Vector2 implements Serializable {
     float x; // X component of the point.
     float y; // Y component of the point.
     

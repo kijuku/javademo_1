@@ -1,6 +1,8 @@
 package main;
 
-public class Triangle {
+import java.io.Serializable;
+
+public class Triangle implements Serializable {
     private String name;
     private Point pointA;
     private Point pointB;
@@ -62,17 +64,17 @@ public class Triangle {
         this.pointC = pointC;
     }
 
-    public float length(Point p1, Point p2){
+    public double length(Point p1, Point p2){
         
-        float x = (p1.getX() - p2.getX())*(p1.getX() - p2.getX());
-        float y = (p1.getY() - p2.getY())*(p1.getY() - p2.getY());
-        float z = (p1.getZ() - p2.getZ())*(p1.getZ() - p2.getZ());
-        float sum = x+y+z;
-        return (float)(Math.sqrt(sum));
+        double x = (p1.getX() - p2.getX())*(p1.getX() - p2.getX());
+        double y = (p1.getY() - p2.getY())*(p1.getY() - p2.getY());
+        double z = (p1.getZ() - p2.getZ())*(p1.getZ() - p2.getZ());
+        double sum = x+y+z;
+        return (double)(Math.sqrt(sum));
     }
 
-    public float calculateSides(String name){
-        float val = 0.0f;
+    public double calculateSides(String name){
+        double val = 0.0f;
         switch (name){
             case "A":
                 val = length(pointA, pointB);

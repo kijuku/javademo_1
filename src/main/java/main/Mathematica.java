@@ -1,6 +1,8 @@
 package main;
 
-public class Mathematica {
+import java.io.Serializable;
+
+public class Mathematica implements Serializable {
     private double x;
     private double y;
     private double z;

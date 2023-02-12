@@ -1,51 +1,56 @@
 package main;
 
-public class Point {
-    float x; // X component of the point.
-    float y; // Y component of the point.
-    float z; // Y component of the point.
+import java.io.Serializable;
 
+public class Point implements Serializable {
+    double x; // X component of the point.
+    double y; // Y component of the point.
+    double z; // Y component of the point.
+
+    /**
+     * 
+     */
     public Point() {
         this.x = 0.0f;
         this.y = 0.0f;
         this.z = 0.0f;
     }
 
-    public Point(float x, float y, float z) {
+    public Point(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
 
-    public float getX() {
+    public double getX() {
         return this.x;
     }
 
-    public void setX(float x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public float getY() {
+    public double getY() {
         return this.y;
     }
 
-    public void setY(float y) {
+    public void setY(double y) {
         this.y = y;
     }
 
-    public float getZ() {
+    public double getZ() {
         return this.z;
     }
 
-    public void setZ(float z) {
+    public void setZ(double z) {
         this.z = z;
     }
 
-    public void setPoint(float x, float y, float z) {
-        this.setX(x);
-        this.setY(y);
-        this.setZ(z);
+    public void setPoint(double d, double e, double f) {
+        this.setX(d);
+        this.setY(e);
+        this.setZ(f);
     }
 
     public Point getPoint() {

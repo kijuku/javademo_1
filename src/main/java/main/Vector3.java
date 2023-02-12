@@ -1,15 +1,16 @@
 package main;
+import java.io.Serializable;
 import java.lang.Math;
 
-public class Vector3 {
-    float x; // X component of the point.
-    float y; // Y component of the point.
-    float z; // Y component of the point.
+public class Vector3 implements Serializable {
+    double x; // X component of the point.
+    double y; // Y component of the point.
+    double z; // Y component of the point.
 
     public Vector3() {
-        this.x = 0.0f;
-        this.y = 0.0f;
-        this.z = 0.0f;
+        this.x = 0.0d;
+        this.y = 0.0d;
+        this.z = 0.0d;
     }
 
     public Vector3(Point p) {
@@ -18,87 +19,94 @@ public class Vector3 {
         this.z = p.getZ();
     }
 
-    public Vector3(float x, float y, float z) {
+    public Vector3(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
     
-    public float getX() {
+    public double getX() {
         return this.x;
     }
 
-    public void setX(float x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public float getY() {
+    public double getY() {
         return this.y;
     }
 
-    public void setY(float y) {
+    public void setY(double y) {
         this.y = y;
     }
 
-    public float getZ() {
+    public double getZ() {
         return this.z;
     }
 
-    public void setZ(float z) {
+    public void setZ(double z) {
         this.z = z;
     }
 
-    public void setVector3(float x, float y, float z) {
+    public void setVector3(double x, double y, double z) {
         this.setX(x);
         this.setY(y);
         this.setZ(z);
     }
+   
+    public void setPoint(Point point) {
+        this.setX(point.getX());
+        this.setY(point.getY());
+        this.setZ(point.getZ());
+    }
+    
     public Vector3 forward(){
-        this.setX(0.0f);
-        this.setY(0.0f);
-        this.setZ(1.0f);
+        this.setX(0.0d);
+        this.setY(0.0d);
+        this.setZ(1.0d);
         return this;
     }
     public Vector3 down(){
-        this.setX(0.0f);
-        this.setY(-1.0f);
-        this.setZ(0.0f);
+        this.setX(0.0d);
+        this.setY(-1.0d);
+        this.setZ(0.0d);
         return this;
     }
     public Vector3 back(){
-        this.setX(0.0f);
-        this.setY(0.0f);
-        this.setZ(-1.0f);
+        this.setX(0.0d);
+        this.setY(0.0d);
+        this.setZ(-1.0d);
         return this;
     }
     public Vector3 left(){
-        this.setX(-1.0f);
-        this.setY(0.0f);
-        this.setZ(0.0f);
+        this.setX(-1.0d);
+        this.setY(0.0d);
+        this.setZ(0.0d);
         return this;
     }
     public Vector3 right(){
-        this.setX(1.0f);
-        this.setY(0.0f);
-        this.setZ(0.0f);
+        this.setX(1.0d);
+        this.setY(0.0d);
+        this.setZ(0.0d);
         return this;
     }
     public Vector3 up(){
-        this.setX(0.0f);
-        this.setY(1.0f);
-        this.setZ(0.0f);
+        this.setX(0.0d);
+        this.setY(1.0d);
+        this.setZ(0.0d);
         return this;
     }
     public Vector3 one(){
-        this.setX(1.0f);
-        this.setY(1.0f);
-        this.setZ(1.0f);
+        this.setX(1.0d);
+        this.setY(1.0d);
+        this.setZ(1.0d);
         return this;
     }
     public Vector3 zero(){
-        this.setX(0.0f);
-        this.setY(0.0f);
-        this.setZ(0.0f);
+        this.setX(0.0d);
+        this.setY(0.0d);
+        this.setZ(0.0d);
         return this;
     }
 
@@ -134,37 +142,37 @@ public class Vector3 {
         return this;
     }
 
-    public Vector3 mulScalar(float k){
+    public Vector3 mulScalar(double k){
         this.setX(this.getX() * k);
         this.setY(this.getY() * k);
         this.setZ(this.getZ() * k);
         return this;
     }
 
-    public float norm(){
-        float x2 = (this.getX()*this.getX());
-        float y2 = (this.getY()*this.getY());
-        float z2 = (this.getZ()*this.getZ());
+    public double norm(){
+        double x2 = (this.getX()*this.getX());
+        double y2 = (this.getY()*this.getY());
+        double z2 = (this.getZ()*this.getZ());
         double sum = (double)(x2+y2+z2);
-        return (float)(Math.sqrt(sum));
+        return (double)(Math.sqrt(sum));
     }
 
-    public float dotProduct(Vector3 a, Vector3 b){
+    public double dotProduct(Vector3 a, Vector3 b){
         Vector3 dotProd = new Vector3();
         dotProd.setX(a.getX() * b.getX());
         dotProd.setY(a.getX() * b.getX());
         dotProd.setZ(a.getX() * b.getX());
-        float sum = dotProd.getX()+dotProd.getY()+dotProd.getZ();
+        double sum = dotProd.getX()+dotProd.getY()+dotProd.getZ();
         return sum;
     }
 
-    public float dotProduct(Vector3 a){
+    public double dotProduct(Vector3 a){
         Vector3 dotProd = new Vector3();
         dotProd.setX(a.getX() * this.getX());
         dotProd.setY(a.getY() * this.getY());
         dotProd.setZ(a.getZ() * this.getZ());
 
-        float sum = dotProd.getX()+dotProd.getY()+dotProd.getZ();
+        double sum = dotProd.getX()+dotProd.getY()+dotProd.getZ();
         return sum;
     }
 
@@ -186,7 +194,7 @@ public class Vector3 {
         return ret;
     }
 
-    public Vector3 mulScalar(Vector3 a, float k){
+    public Vector3 mulScalar(Vector3 a, double k){
         Vector3 ret = new Vector3();
 
         ret.setX(a.getX() * k);
