@@ -110,6 +110,56 @@ public class Vector3 implements Serializable {
         return this;
     }
 
+    
+
+    /*
+     * Rotate Vector3 from Origin 
+     */
+    public Vector3 rotate(String axel, double rad){
+        Vector3 v = new Vector3();
+        double x1 = 0.0d;
+        double y1 = 0.0d;
+        double z1 = 0.0d;
+
+        switch(axel){
+            case "X":
+                x1 = this.getX();
+                y1 = this.getY()*Math.cos(rad)-this.getZ()*Math.sin(rad);
+                z1 = this.getY()*Math.sin(rad)+this.getZ()*Math.cos(rad);
+            break;
+            case "Y":
+                x1 = this.getX()*Math.cos(rad)+this.getZ()*Math.sin(rad);
+                y1 = this.getY();
+                z1 = -this.getX()*Math.sin(rad)+this.getZ()*Math.cos(rad);
+            break;
+            case "Z":
+                x1 = this.getX()*Math.cos(rad)-this.getY()*Math.sin(rad);
+                y1 = this.getX()*Math.sin(rad)+this.getY()*Math.cos(rad);
+                z1 = this.getZ();
+            break;
+
+        }
+
+        v.setX(x1);
+        v.setY(y1);
+        v.setZ(z1);
+        return v;
+    }
+
+    
+    /*
+     * Rotate Vector3 from Origin 
+     */
+    public Vector3 rotateDeg(double deg){
+        Vector3 v = new Vector3();
+        double x1 = this.getX()*Math.cos(deg)-this.getY()*Math.sin(deg);
+        double y1 = this.getX()*Math.sin(deg)+this.getY()*Math.cos(deg);
+
+        v.setX(x1);
+        v.setY(y1);
+        return v;
+    }
+
     public Vector3 add(Vector3 a, Vector3 b){
         Vector3 ret = new Vector3();
 
@@ -205,9 +255,9 @@ public class Vector3 implements Serializable {
 
     public String toString(){
         String s = "";
-        s += "x: "+ this.getX() + " ";
-        s += "y: "+ this.getY() + " ";
-        s += "z: "+this.getZ();
+        s += "x: "+ String.format("%.2f",this.getX()) + " ";
+        s += "y: "+ String.format("%.2f",this.getY()) + " ";
+        s += "z: "+ String.format("%.2f",this.getZ());
         return s;
     }
     public String toString(String format){

@@ -60,25 +60,49 @@ public class Point implements Serializable {
     
     public String toString(){
         String s = "";
-        s += "x: "+ this.getX() + " ";
-        s += "y: "+ this.getY() + " ";
-        s += "z: "+this.getZ();
+        s += "x: "+ String.format("%.2f", this.getX()) + " ";
+        s += "y: "+ String.format("%.2f", this.getY()) + " ";
+        s += "z: "+ String.format("%.2f", this.getZ());
         return s;
     }
+
     public String toString(String format){
         String s = "";
         switch(format){
             case "F1":            
-                s += "x: "+ this.getX() + " ";
-                s += "y: "+ this.getY() + " ";
-                s += "z: "+this.getZ();
+                s += "x: "+ String.format("%.2f", this.getX()) + " ";
+                s += "y: "+ String.format("%.2f", this.getY()) + " ";
+                s += "z: "+ String.format("%.2f", this.getZ());
             break;
             case "F2":
                 s += "( ";
-                s += "X: "+ this.getX() + " ";
-                s += "Y: "+ this.getY() + " ";
-                s += "Z: "+ this.getZ();
+                s += "X: "+ String.format("%.2f", this.getX()) + " ";
+                s += "Y: "+ String.format("%.2f", this.getY()) + " ";
+                s += "Z: "+ String.format("%.2f", this.getZ());
                 s += " )";
+            break;
+            case "CSV":
+            s += "";
+            s += ""+ String.format("%.2f", this.getX()) + ";";
+            s += ""+ String.format("%.2f", this.getY()) + ";";
+            s += ""+ String.format("%.2f", this.getZ());
+            s += ";";
+            break;
+            case "JSON":
+                s += "";
+                s += "\t\"coodinate\": [\n";
+                s += "\t\t"+ this.getX() + ",\n";
+                s += "\t\t"+ this.getY() + ",\n";
+                s += "\t\t"+ this.getZ();
+                s += "\n\t\t] \n";
+            break;
+            case "JSONCOM":
+                s += "";
+                s += "\"coodinate\": [ ";
+                s += " "+ this.getX() + ", ";
+                s += " "+ this.getY() + ", ";
+                s += " "+ this.getZ();
+                s += " ] ";
             break;
             default:
             break;

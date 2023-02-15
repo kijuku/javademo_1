@@ -1,6 +1,8 @@
 package main;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+
 
 /**
  * Trigonometria - class using example
@@ -109,8 +111,8 @@ public class App {
                         System.out.println("Pituus r: " + len);
         // Kolmio
         Point pp1 = new Point(0, 0, 0);
-        Point pp2 = new Point(3, 0, -1);
-        Point pp3 = new Point(0, 4, -1);
+        Point pp2 = new Point(3, 0, 0);
+        Point pp3 = new Point(0, 4, 0);
         Triangle tri2 = new Triangle("Triangle ABC", pp1, pp2, pp3);
 
         System.out.println(tri2);
@@ -145,7 +147,7 @@ public class App {
         System.out.println(t3);
 
         // Square test
-
+        System.out.println("\n**********************************************************");
         ArrayList<Point> corner = new ArrayList<Point>();
         
    //     for (int p = 0; p < 4; p++){
@@ -165,7 +167,10 @@ public class App {
         Square square = new Square(corner,"Square 1");
         System.out.println(square);
         System.out.println("Area: " + calc.area(square) + "");
+        System.out.println(calc.getAreaStr());
+
         System.out.println("Perimeter: " + calc.perimeter(square) + "");
+        System.out.println(calc.getPerimeterStr());
 
         ArrayList<Point> corner2 = new ArrayList<Point>();
         
@@ -173,19 +178,86 @@ public class App {
         //         corner.add(new Point(0, 0, 0));
         //     }
              
-             corner2.add(0, new Point(0, 0, 0));
-             
-             corner2.add(1, new Point(10, 0, -1));
-             
-             corner2.add(2, new Point(0, 5, 0));
-     
-             corner2.add(3, new Point(10, 5, -1));
-     
-             Calculator calc2 = new Calculator();
-     
-             Square square2 = new Square(corner2,"Square 2");
-             System.out.println(square2);
-             System.out.println("Area: " + calc2.area(square2) + "");
-             System.out.println("Perimeter: " + calc2.perimeter(square2) + "");
+        corner2.add(0, new Point(0, 0, 0));
+        
+        corner2.add(1, new Point(10, 0, -1));
+        
+        corner2.add(2, new Point(0, 5, 0));
+
+        corner2.add(3, new Point(10, 5, -1));
+
+        Calculator calc2 = new Calculator();
+        DecimalFormat df = new DecimalFormat("#.##");
+        
+        Square square2 = new Square(corner2,"Square 2");
+        System.out.println(square2);
+        
+        System.out.println("Area: " + df.format(calc2.area(square2)) + "");
+        System.out.println(calc2.getAreaStr());
+        System.out.println("Perimeter: " + df.format(calc2.perimeter(square2)) + "");
+        System.out.println(calc2.getPerimeterStr());
+
+    
+        Calculator calc3 = new Calculator();
+        Square square3 = new Square(p1,p2,"Square 3");
+        System.out.println(square3);
+        
+        System.out.println("Area: " + df.format(calc3.area(square3)) + "");
+
+        System.out.println("Perimeter: " + df.format(calc3.perimeter(square3)) + "");
+        System.out.println(calc3.getPerimeterStr());
+
+        calc3.reset();
+
+        Square square4 = new Square(p1, 15.0d, "Square 4");
+        System.out.println(square4);
+        System.out.println("Area: " + df.format(calc3.area(square4)) + "");
+
+        System.out.println(calc3.getAreaStr());
+        System.out.println("Perimeter: " + df.format(calc3.perimeter(square4)) + "");
+        
+        System.out.println(calc3.getPerimeterStr());
+
+        calc3.reset();
+
+        Square square5 = new Square(p1, 1.5d, 2.6d, "Square 5");
+        System.out.println(square5);
+        System.out.println("Area: " + df.format(calc3.area(square5)) + "");
+
+        System.out.println(calc3.getAreaStr());
+
+        System.out.println("Perimeter: " + df.format(calc3.perimeter(square5)) + "");
+        
+        System.out.println(calc3.getPerimeterStr());
+
+        System.out.println(square5.toString("CSV"));
+        System.out.println(square5.toString("JSON"));
+        System.out.println(square5.toString("JSONCOM"));
+
+        calc3.reset();
+        System.out.println(tri2);
+        System.out.println("Area: " + df.format(calc3.area(tri2)) + "");
+
+        System.out.println(calc3.getAreaStr());
+
+        System.out.println("\n**********************************************************");
+        Vector2 d1 = new Vector2(2,1);
+
+        System.out.println(d1);
+        System.out.println("Rotate: ");
+        System.out.println(d1.rotate(Math.PI/2));
+        System.out.println(d1.rotate(Math.PI));
+        System.out.println(d1.rotate(2*Math.PI*3/4));
+
+        System.out.println("Radians: " + String.format("%.2f",d1.degToRad(180)));
+        System.out.println("Degrees: " + String.format("%.2f",d1.radToDeg(Math.PI/3)));
+
+        System.out.println("\n**********************************************************");
+        System.out.println("Vector3 v3: " + v3);
+        System.out.println("ROTATE X: " + v3.rotate("X", Math.PI/2));
+        System.out.println("ROTATE Y: " + v3.rotate("Y", Math.PI/2));
+        System.out.println("ROTATE Z: " + v3.rotate("Z", Math.PI/2));
+
     }
 }
+    

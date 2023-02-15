@@ -1,0 +1,35 @@
+{ "name:" : "Square 5",
+"square" :[
+{
+ "pointname" : "p1",
+ "coodinate": [
+0.00,
+0.00,
+0.00
+ ] },
+{
+"pointname" : "p2",
+ "coordinate": [
+0.00,
+1.50,
+0.00
+ ]
+ },
+{ 
+"pointname" : "p3",
+"coordinate":  [
+2.60,
+0.00,
+0.00
+]
+ },
+{ 
+"pointname" : "p4",
+"coordinate": [
+2.60,
+1.50,
+0.00
+ ]
+ }
+]
+}
