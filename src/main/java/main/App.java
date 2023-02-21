@@ -258,6 +258,15 @@ public class App {
         System.out.println("ROTATE Y: " + v3.rotate("Y", Math.PI/2));
         System.out.println("ROTATE Z: " + v3.rotate("Z", Math.PI/2));
 
+        System.out.println("Cube:");
+        System.out.println("\n**********************************************************");
+        Cube cube = new Cube(p2, 3.0D);
+
+
+        System.out.println(cube);
+        System.out.println(cube.toString("Vertex"));
+
+
     }
 }
     
