@@ -247,7 +247,7 @@ public class Cube extends Face {
             break;
             case "JSON":
                 s += "(JSON)\n";             
-                s += "{ \"name\" : \"" + this.getName() + "\",\n"; 
+                s += "{\n\"name\" : \"" + this.getName() + "\",\n"; 
                 s += "\"type\"  : \"cube\",\n";
                 s += "\"Vertex\" : {\n";
                 k = 1;

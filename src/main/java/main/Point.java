@@ -90,19 +90,20 @@ public class Point implements Serializable {
             break;
             case "JSON":
                 s += "";
-                s += "\t\"coodinate\": [\n";
-                s += "\t\t"+ this.getX() + ",\n";
-                s += "\t\t"+ this.getY() + ",\n";
-                s += "\t\t"+ this.getZ();
-                s += "\n\t\t] \n";
+                s += "\t\"coodinate\": \n";
+                s += "\t\t{";
+                s += "\n\t\t\"x\" : "+ this.getX() + ",\n";
+                s += "\t\t\"y\" : "+ this.getY() + ",\n";
+                s += "\t\t\"z\" : "+ this.getZ();
+                s += "\n\t\t}\n\t\t \n";
             break;
             case "JSONCOM":
                 s += "";
-                s += "\"coodinate\": [ ";
-                s += " "+ this.getX() + ", ";
-                s += " "+ this.getY() + ", ";
-                s += " "+ this.getZ();
-                s += " ] ";
+                s += "\"coodinate\":  ";
+                s += "{\n\"x\" : "+ this.getX() + ", ";
+                s += "\"y\" : "+ this.getY() + ", ";
+                s += "\"z\" : "+ this.getZ();
+                s += "}\n  ";
             break;
             default:
             break;

@@ -269,7 +269,11 @@ public class App {
         System.out.println(cube.toString("Cubemidpoint"));
         System.out.println("\n**********************************************************");
         System.out.println(cube.toString("JSON"));
+
         //System.out.println(cube.toString("Diagonal"));
+
+        Pyramid pyramid = new Pyramid(p3, 1.5D);
+        System.out.println(pyramid.toString("JSON"));
     }
 }
     

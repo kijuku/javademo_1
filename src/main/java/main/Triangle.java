@@ -3,10 +3,10 @@ package main;
 import java.io.Serializable;
 
 public class Triangle implements Serializable {
-    private String name;
-    private Point pointA;
-    private Point pointB;
-    private Point pointC;
+    protected String name;
+    protected Point pointA;
+    protected Point pointB;
+    protected Point pointC;
 
     public Triangle() {
         Point p1 = new Point();
@@ -100,4 +100,21 @@ public class Triangle implements Serializable {
         return s;
     }
 
+
+    public String toString(String format) {
+        String s = "";
+        switch(format){
+            case "JSON":
+                s += "\"TriangleVertex" + this.name + "1\" : { \n";
+                s += "" + this.pointA.toString("JSON") + "},\n";
+                s += "\"TriangleVertex" + this.name + "2\" : \n  {\n";
+                s += "" + this.pointB.toString("JSON") + "},\n";
+                s += "\"TriangleVertex" + this.name + "3\" : \n  {\n";
+                s += "" + this.pointC.toString("JSON") + " }\n";
+            break;
+
+        }
+
+        return s;
+    }
 }
