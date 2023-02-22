@@ -2,8 +2,22 @@ package main;
 
 public class Face extends Vertex {
     protected Vertex [] face = new Vertex [4];
+    protected Vertex midPoint = new Vertex();
     protected String name;
+   
+    public Face(Vertex[] face, Vertex midPoint, String name) {
+        this.face = face;
+        this.midPoint = midPoint;
+        this.name = name;
+    }    
 
+
+    public Face(Point a, Vertex[] face, Vertex midPoint, String name) {
+        super(a);
+        this.face = face;
+        this.midPoint = midPoint;
+        this.name = name;
+    }    
 
     public Face() {
     }
@@ -36,6 +50,14 @@ public class Face extends Vertex {
     }
 
 
+    public Vertex getMidPoint() {
+        return this.midPoint;
+    }
+
+    public void setMidPoint(Vertex midPoint) {
+        this.midPoint = midPoint;
+    }
+
    /*  @Override
     public String toString() {
         return "{" +
@@ -54,4 +76,15 @@ public class Face extends Vertex {
         return s;
     }
 
+    public String toString(String format) {
+        String s = "\n";
+        switch(format){
+            case "Midpoint":
+                s += "" + this.getMidPoint() +"\n";
+                
+            break;
+        }
+
+        return s;
+    }
 }

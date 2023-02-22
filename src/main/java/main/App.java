@@ -260,12 +260,12 @@ public class App {
 
         System.out.println("Cube:");
         System.out.println("\n**********************************************************");
-        Cube cube = new Cube(p2, 3.0D);
-
-
+        
+        Point p3 = new Point(0.0f, 0.0f, 0.0f);
+        Cube cube = new Cube(p3, 1.0D);
         System.out.println(cube);
         System.out.println(cube.toString("Vertex"));
-
+        System.out.println(cube.toString("Midpoint"));
 
     }
 }
