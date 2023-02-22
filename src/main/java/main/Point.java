@@ -82,11 +82,11 @@ public class Point implements Serializable {
                 s += " )";
             break;
             case "CSV":
-            s += "";
-            s += ""+ String.format("%.2f", this.getX()) + ";";
-            s += ""+ String.format("%.2f", this.getY()) + ";";
-            s += ""+ String.format("%.2f", this.getZ());
-            s += ";";
+                s += "";
+                s += ""+ String.format("%.2f", this.getX()) + ";";
+                s += ""+ String.format("%.2f", this.getY()) + ";";
+                s += ""+ String.format("%.2f", this.getZ());
+                s += ";";
             break;
             case "JSON":
                 s += "";

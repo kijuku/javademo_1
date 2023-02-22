@@ -262,11 +262,14 @@ public class App {
         System.out.println("\n**********************************************************");
         
         Point p3 = new Point(0.0f, 0.0f, 0.0f);
-        Cube cube = new Cube(p3, 1.0D);
+        Cube cube = new Cube(p3, 100.0D);
         System.out.println(cube);
         System.out.println(cube.toString("Vertex"));
         System.out.println(cube.toString("Midpoint"));
-
+        System.out.println(cube.toString("Cubemidpoint"));
+        System.out.println("\n**********************************************************");
+        System.out.println(cube.toString("JSON"));
+        //System.out.println(cube.toString("Diagonal"));
     }
 }
     

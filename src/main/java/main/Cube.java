@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Cube extends Face {
     protected ArrayList<Face> cube = new ArrayList<Face>();
     protected ArrayList<Vertex> cubeVertex = new ArrayList<Vertex>();
+    protected Vertex midPoint = new Vertex();
     protected String name;
 
 
@@ -58,6 +59,7 @@ public class Cube extends Face {
         return ret; 
     }
 
+    /***************************************************************************/
     private void generateCube(Point a, double size){
         Face face1 = new Face();
         Vertex vertex = new Vertex(a);
@@ -71,7 +73,7 @@ public class Cube extends Face {
         face1.face[3] = addY(face1.face[1],size);
         cubeVertex.add(face1.face[3]);
         face1.midPoint = calcMidPoint(face1.face[0], face1.face[3]);
-        
+        face1.setDiagonal(face1.face[0], face1.face[3]);
         cube.add(face1);
 
         
@@ -85,16 +87,19 @@ public class Cube extends Face {
         face2.face[3] = addZ(face1.face[3],size);
         cubeVertex.add(face2.face[3]);
         face2.midPoint = calcMidPoint(face2.face[0], face2.face[3]);
-        
+        face2.setDiagonal(face2.face[0], face2.face[3]);
         cube.add(face2);
 
+        // Calculate Cube Midpoint
+        this.setMidPoint(calcMidPoint(face1.face[0], face2.face[3]));
+        
         Face face3 = new Face();
         face3.face[0] = face1.face[0];
         face3.face[1] = face1.face[1];
         face3.face[2] = face2.face[0];
         face3.face[3] = face2.face[1];
         face3.midPoint = calcMidPoint(face3.face[0], face3.face[3]);
-
+        face3.setDiagonal(face3.face[0], face3.face[3]);
         cube.add(face3);
 
         Face face4 = new Face();
@@ -103,7 +108,7 @@ public class Cube extends Face {
         face4.face[2] = face2.face[1];
         face4.face[3] = face2.face[3];
         face4.midPoint = calcMidPoint(face4.face[0], face4.face[3]);
-
+        face4.setDiagonal(face4.face[0], face4.face[3]);
         cube.add(face4);
 
         Face face5 = new Face();
@@ -112,7 +117,7 @@ public class Cube extends Face {
         face5.face[2] = face2.face[3];
         face5.face[3] = face2.face[2];
         face5.midPoint = calcMidPoint(face5.face[0], face5.face[3]);
-        
+        face5.setDiagonal(face5.face[0], face5.face[3]);
         cube.add(face5);
 
         Face face6 = new Face();
@@ -121,7 +126,7 @@ public class Cube extends Face {
         face6.face[2] = face2.face[2];
         face6.face[3] = face2.face[0];
         face6.midPoint = calcMidPoint(face6.face[0], face6.face[3]);
-
+        face6.setDiagonal(face6.face[0], face6.face[3]);
         cube.add(face6);
 
         
@@ -167,6 +172,17 @@ public class Cube extends Face {
         this.cubeVertex = cubeVertex;
     }
 
+    //**********************************************************/
+    public Vertex getMidPoint() {
+        return this.midPoint;
+    }
+
+    //**********************************************************/
+    public void setMidPoint(Vertex midPoint) {
+        this.midPoint = midPoint;
+    }
+
+
 
     //**********************************************************/
     public String toString(){
@@ -201,7 +217,97 @@ public class Cube extends Face {
                     k++;
                 }
             break;
+            case "Cubemidpoint":
+                s = "Cube MidPoint:\n";
+                s += "" + this.getMidPoint() + "\n";            
+            break;
+            case "Diagonal":
+                s = "Cube Face Diagonal:\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    s += "Face " + k + " Diagonal: "  + face.toString("Diagonal") + "\n";
+                    k++;
+                }
+            break;
+            case "CSV":
+                s = "Vertex:\n";
+                k = 1;
+                for (Vertex v : this.getCubeVertex()){
+                    s += "Vertex " + k + ": "  + v.toString() + "\n";
+                    k++;
+                }
+                s += "MidPoints:\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    s += "Face " + k + " MidPoint: "  + face.toString("Midpoint") + "\n";
+                    k++;
+                }
+                s += "Cube MidPoint:\n";
+                s += "" + this.getMidPoint() + "\n";            
+            break;
+            case "JSON":
+                s += "(JSON)\n";             
+                s += "{ \"name\" : \"" + this.getName() + "\",\n"; 
+                s += "\"type\"  : \"cube\",\n";
+                s += "\"Vertex\" : {\n";
+                k = 1;
+                for (Vertex v : this.getCubeVertex()){
+                    if (k < 8) {
+                        s += "\"Vertex " + k + "\" : { "  + v.toString("JSON") + "},\n\n";
+                    } else {
+                        s += "\"Vertex " + k + "\" : { "  + v.toString("JSON") + "}\n\n";
+                    }
+                    k++;
+                }
+                s += "},\n";
+                s += "\"MidPoints\" : {\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    if (k < 6){
+                        s += "\"Face " + k + " MidPoint\" : { "  + face.toString("JSON") + "},\n\n";
+                    } else {
+                        s += "\"Face " + k + " MidPoint\" : { "  + face.toString("JSON") + "}\n\n";
+                    }
+                    k++;
+                }
+                s += "},\n";
+                // Face
+                s += "\"Faces\" : {\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    if (k < 6){
+                        s += "\"Face " + k + "\" : { \n"  + face.toString("JSONFACE") + "}\n,\n\n";
+                    } else {
+                        s += "\"Face " + k + "\" : { \n"  + face.toString("JSONFACE") + "}\n\n\n";
+                    }
+                    k++;
+                }
+                s += "\n},\n";
+
+                s += "\"Cube MidPoint\" : {\n";
+                s += "" + this.getMidPoint().toString("JSON") + "\n";             
+                s += "\t\t}\n";
+                s += "\t}\n";
+                s += "";
+
+            break;
     
+            case "JSONCOM":
+                s = "Vertex:\n";
+                k = 1;
+                for (Vertex v : this.getCubeVertex()){
+                    s += "Vertex " + k + ": "  + v.toString() + "\n";
+                    k++;
+                }
+                s += "MidPoints:\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    s += "Face " + k + " MidPoint: "  + face.toString("Midpoint") + "\n";
+                    k++;
+                }
+                s += "Cube MidPoint:\n";
+                s += "" + this.getMidPoint() + "\n";
+             break;
         } 
         
         return s;

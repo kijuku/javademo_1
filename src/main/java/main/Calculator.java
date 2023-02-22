@@ -3,16 +3,28 @@ package main;
 import java.io.Serializable;
 
 public class Calculator implements Serializable {
+    // Triangle calculator
     private double area;
     private double perimeter;
     private String areaStr;
     private String perimeterStr;
+    // Cube Calculator
+    private double cubeArea;
+    private double[] cubeAreaList = new double[6];
+    private double cubeVolume;
+    private double faceDiagonal;
+    private double cubeDiagonal;
 
+    
     public Calculator(){
         this.area = 0.0d;
         this.perimeter = 0.0d;
         this.perimeterStr = "";
         this.areaStr = "";
+        this.cubeArea = 0.0d;
+        this.cubeVolume = 0.0d;
+        this.faceDiagonal = 0.0d;
+        this.cubeDiagonal = 0.0d;
     }
 
     public double getPerimeter() {
@@ -197,6 +209,59 @@ public class Calculator implements Serializable {
     public double degToRad(double deg){
         return (2*Math.PI/360)*deg;
     }
-    
+
+    public double getCubeArea() {
+        return cubeArea;
+    }
+
+    public void setCubeArea(double cubeArea) {
+        this.cubeArea = cubeArea;
+    }
+
+    public double getCubeVolume() {
+        return cubeVolume;
+    }
+
+    public void setCubeVolume(double cubeVolume) {
+        this.cubeVolume = cubeVolume;
+    }
+
+    public double[] getCubeAreaList() {
+        return this.cubeAreaList;
+    }
+
+    public void setCubeAreaList(double[] cubeAreaList) {
+        this.cubeAreaList = cubeAreaList;
+    }
+
+    public double getFaceDiagonal() {
+        return this.faceDiagonal;
+    }
+
+    public void setFaceDiagonal(double faceDiagonal) {
+        this.faceDiagonal = faceDiagonal;
+    }
+
+    public double getCubeDiagonal() {
+        return this.cubeDiagonal;
+    }
+
+    public void setCubeDiagonal(double cubeDiagonal) {
+        this.cubeDiagonal = cubeDiagonal;
+    }
+
+    /* Cube - calculations */    
+    public String calculateCubeDiagonal(Cube cube){
+        String s = "";
+        
+        cube.getFace();
+        return s;
+    }
+
+    public String calculateCube(Cube cube){
+        String s = "";
+        s += calculateCubeDiagonal(cube);
+        return s;
+    } 
 }
 
