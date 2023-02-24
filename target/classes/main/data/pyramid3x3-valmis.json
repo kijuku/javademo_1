@@ -1,0 +1,172 @@
+{
+  "name": "Default pyramid",
+  "type": "pyramid",
+  "Vertex": {
+    "Vertex 1": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 2": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 3": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 4": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    }
+  },
+  "Triangle Faces": {
+    "Pyramid Triangle Faces1": {
+      "TriangleVertex1": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex2": {
+        "coodinate": {
+          "x": 3.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex3": {
+        "coodinate": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 3.0
+        }
+      }
+    },
+    "Pyramid Triangle Faces2": {
+      "TriangleVertex1": {
+        "coodinate": {
+          "x": 3.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex2": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex3": {
+        "coodinate": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 3.0
+        }
+      }
+    },
+    "Pyramid Triangle Faces3": {
+      "TriangleVertex1": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 3.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex2": {
+        "coodinate": {
+          "x": 3.0,
+          "y": 3.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex3": {
+        "coodinate": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 3.0
+        }
+      }
+    },
+    "Pyramid Triangle Faces4": {
+      "TriangleVertex1": {
+        "coodinate": {
+          "x": 3.0,
+          "y": 3.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex2": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "TriangleVertex3": {
+        "coodinate": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 3.0
+        }
+      }
+    }
+  },
+  "Side MidVertex": {
+    "Side MidVertex1": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Side MidVertex2": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 0.0
+      }
+    },
+    "Side MidVertex3": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "Side MidVertex4": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 0.0
+      }
+    }
+  },
+  "Pyramid TopPoint": {
+    "coodinate": {
+      "x": 1.5,
+      "y": 1.5,
+      "z": 3.0
+    }
+  },
+  "Pyramid Face MidPoint": {
+    "coodinate": {
+      "x": 1.5,
+      "y": 1.5,
+      "z": 0.0
+    }
+  }
+}

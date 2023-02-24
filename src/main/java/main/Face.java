@@ -121,6 +121,7 @@ public class Face extends Vertex {
     /***************************************************************************/
     public String toString(String format) {
         String s = "\n";
+        int k = 1;
         switch(format){
             case "Midpoint":
                 s += "" + this.getMidPoint() +"\n";
@@ -138,7 +139,7 @@ public class Face extends Vertex {
                 s += "" + this.getMidPoint().toString("JSON") +"\n";
             break;
             case "JSONFACE":
-                int k = 1;
+                k = 1;
                 for(Vertex v : this.getFace()){
                     if (k < 4){
                         s += "\"FaceVertex"+k+"\":{" + v.toString("JSON") +"},\n";
@@ -150,6 +151,21 @@ public class Face extends Vertex {
             break;
             case "JSONCOM":
                 s += "" + this.getMidPoint().toString("JSONCOM") +"\n";
+                
+            break;
+            case "JSONARRAY":
+                k = 1;
+                for(Vertex v : this.getFace()){
+                    if (k < 4){
+                        s += "\t[" + v.toString("JSONARRAY") +"],\n";
+                    }else{
+                        s += "\t[" + v.toString("JSONARRAY") +"]\n";
+                    }
+                    k++;
+                }
+            break;
+            case "JSONMIDPOINT":
+                s += "" + this.getMidPoint().toString("JSONARRAY") +"\n";
                 
             break;
         }

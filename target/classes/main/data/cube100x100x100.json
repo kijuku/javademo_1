@@ -1,0 +1,295 @@
+{
+  "name": "default Cube",
+  "type": "cube",
+  "Vertex": {
+    "Vertex 1": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 2": {
+      "coodinate": {
+        "x": 100.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 3": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 100.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 4": {
+      "coodinate": {
+        "x": 100.0,
+        "y": 100.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 5": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 100.0
+      }
+    },
+    "Vertex 6": {
+      "coodinate": {
+        "x": 100.0,
+        "y": 0.0,
+        "z": 100.0
+      }
+    },
+    "Vertex 7": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 100.0,
+        "z": 100.0
+      }
+    },
+    "Vertex 8": {
+      "coodinate": {
+        "x": 100.0,
+        "y": 100.0,
+        "z": 100.0
+      }
+    }
+  },
+  "MidPoints": {
+    "Face 1 MidPoint": {
+      "coodinate": {
+        "x": 50.0,
+        "y": 50.0,
+        "z": 0.0
+      }
+    },
+    "Face 2 MidPoint": {
+      "coodinate": {
+        "x": 50.0,
+        "y": 50.0,
+        "z": 100.0
+      }
+    },
+    "Face 3 MidPoint": {
+      "coodinate": {
+        "x": 50.0,
+        "y": 0.0,
+        "z": 50.0
+      }
+    },
+    "Face 4 MidPoint": {
+      "coodinate": {
+        "x": 100.0,
+        "y": 50.0,
+        "z": 50.0
+      }
+    },
+    "Face 5 MidPoint": {
+      "coodinate": {
+        "x": 50.0,
+        "y": 100.0,
+        "z": 50.0
+      }
+    },
+    "Face 6 MidPoint": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 50.0,
+        "z": 50.0
+      }
+    }
+  },
+  "Faces": {
+    "Face 1": {
+      "FaceVertex1": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex2": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex3": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 100.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex4": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 100.0,
+          "z": 0.0
+        }
+      }
+    },
+    "Face 2": {
+      "FaceVertex1": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex2": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 0.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex3": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 100.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex4": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 100.0,
+          "z": 100.0
+        }
+      }
+    },
+    "Face 3": {
+      "FaceVertex1": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex2": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex3": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex4": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 0.0,
+          "z": 100.0
+        }
+      }
+    },
+    "Face 4": {
+      "FaceVertex1": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex2": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 100.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex3": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 0.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex4": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 100.0,
+          "z": 100.0
+        }
+      }
+    },
+    "Face 5": {
+      "FaceVertex1": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 100.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex2": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 100.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex3": {
+        "coodinate": {
+          "x": 100.0,
+          "y": 100.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex4": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 100.0,
+          "z": 100.0
+        }
+      }
+    },
+    "Face 6": {
+      "FaceVertex1": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 100.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex2": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      },
+      "FaceVertex3": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 100.0,
+          "z": 100.0
+        }
+      },
+      "FaceVertex4": {
+        "coodinate": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 100.0
+        }
+      }
+    }
+  },
+  "Cube MidPoint": {
+    "coodinate": {
+      "x": 50.0,
+      "y": 50.0,
+      "z": 50.0
+    }
+  }
+}

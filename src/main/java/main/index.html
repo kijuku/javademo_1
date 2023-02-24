@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      border: 2px solid;
+      padding: 5px;
+      background-color: #1d6b6b;
+    }
+    th, td {
+      border: 1px solid;
+      padding: 5px;
+      background-color: #d8dbe8;
+    }    
+    </style>
+</head>  
+<body>
+
+<h2>JSON - file</h2>
+
+<p id="data"></p>
+
+<script>
+
+const txt = '{"name":"default Cube","type":"cube","vertex":[[0.0,0.0,0.0],[100.0,0.0,0.0],[100.0,100.0,0.0],[0.0,100.0,0.0],[0.0,0.0,100.0],[100.0,0.0,100.0],[100.0,100.0,100.0],[0.0,100.0,100.0]],\
+"midpoints":[[50.0,50.0,0.0],[50.0,50.0,100.0],[50.0,0.0,50.0],[100.0,50.0,50.0],[50.0,100.0,50.0],[0.0,50.0,50.0]],\
+"faces":[[[0.0,0.0,0.0],[100.0,0.0,0.0],[100.0,100.0,0.0],[0.0,100.0,0.0]],[[0.0,0.0,100.0],[100.0,0.0,100.0],[100.0,100.0,100.0],[0.0,100.0,100.0]],[[0.0,0.0,0.0],[100.0,0.0,0.0],[100.0,0.0,100.0],[0.0,0.0,100.0]],[[100.0,0.0,0.0],[100.0,100.0,0.0],[100.0,100.0,100.0],[100.0,0.0,100.0]],[[100.0,100.0,0.0],[0.0,100.0,0.0],[0.0,100.0,100.0],[100.0,100.0,100.0]],[[0.0,100.0,0.0],[0.0,0.0,0.0],[0.0,0.0,100.0],[0.0,100.0,100.0]]],\
+"midpoint":[50.0,50.0,50.0]}';
+const obj = JSON.parse(txt);
+s = "";
+
+console.log(obj);
+
+document.getElementById("data").innerHTML = "<B>Name: </B>"+ obj.name + ", <B>Type: </B>" + obj.type + "<BR/> ";
+
+y = "<H1>" + obj.name + " Vertex</H1><TABLE ><TBODY>";
+  y += "<TR><TH>Vertex names</TH><TH>x</TH><TH>y</TH><TH>z</TH></TR>";
+  for (let i = 0; i < obj.vertex.length; i++) {
+    y += "<TR><TD><B>Vertex "+ i + "</B></TD>";
+    obj0 = obj.vertex[i];
+    for (let j = 0; j < obj0.length; j++) {
+       y += "<TD>  " + obj0[j] + "  </TD>";
+    }
+    y += "</TR>";
+  }
+  y += "</TBODY></TABLE>";
+  
+document.getElementById("data").innerHTML += "<I>"+ y + "</I><BR/>";
+y = "";
+
+y = "<H1>" + obj.name + " Face MidPoints</H1><TABLE ><TBODY>";
+  y += "<TR><TH>Face MidPoint names</TH><TH>MidPoint</TH></TR>";
+  for (let i = 0; i < obj.midpoints.length; i++) {
+    y += "<TR><TD><B>Face "+ i + " - midpoint</B></TD>";
+    //obj1 = obj.midpoints[i];
+    //for (let j = 0; j < obj1.midpoints; j++) {
+       y += "<TD> ( " + obj.midpoints[i] + " ) </TD>";
+    //}
+    y += "</TR>";
+  }
+  y += "</TBODY></TABLE>";
+  
+document.getElementById("data").innerHTML += "<I>"+ y + "</I><BR/>";
+
+y = "<H1>" + obj.name + " Faces</H1><TABLE ><TBODY>";
+y += "<TR><TH>Face names</TH><TH>P1</TH><TH>P2</TH><TH>P3</TH><TH>P4</TH></TR>";
+for (let i = 0; i < obj.faces.length; i++) {
+  y += "<TR><TD><B>Face "+ i + "</B></TD>";
+  obj2 = obj.faces[i];
+  for (let j = 0; j < obj2.length; j++) {
+     y += "<TD> ( " + obj2[j] + " ) </TD>";
+  }
+  y += "</TR>";
+}
+y += "</TBODY></TABLE>";
+
+document.getElementById("data").innerHTML += "<I>"+ y + "</I><BR/>";
+
+
+document.getElementById("data").innerHTML += "<H1>" + obj.name + " MidPoint</H1>"+"<I> ( "+ obj.midpoint + " )</I><BR/>";
+</script>
+
+</body>
+</html>

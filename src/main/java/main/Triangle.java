@@ -112,6 +112,14 @@ public class Triangle implements Serializable {
                 s += "\"TriangleVertex" + this.name + "3\" : \n  {\n";
                 s += "" + this.pointC.toString("JSON") + " }\n";
             break;
+            case "JSONARRAY":
+                s += "";
+                s += "[" + this.pointA.toString("JSONARRAY") + "],";
+                s += "";
+                s += "[" + this.pointB.toString("JSONARRAY") + "],";
+                s += "";
+                s += "[" + this.pointC.toString("JSONARRAY") + "]";
+            break;
 
         }
 

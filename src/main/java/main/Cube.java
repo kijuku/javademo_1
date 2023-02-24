@@ -68,12 +68,12 @@ public class Cube extends Face {
         cubeVertex.add(face1.face[0]);
         face1.face[1] = addX(vertex,size);
         cubeVertex.add(face1.face[1]);
-        face1.face[2] = addY(vertex,size);
+        face1.face[2] = addY(face1.face[1],size);
         cubeVertex.add(face1.face[2]);
-        face1.face[3] = addY(face1.face[1],size);
+        face1.face[3] = addY(face1.face[0],size);
         cubeVertex.add(face1.face[3]);
-        face1.midPoint = calcMidPoint(face1.face[0], face1.face[3]);
-        face1.setDiagonal(face1.face[0], face1.face[3]);
+        face1.midPoint = calcMidPoint(face1.face[0], face1.face[2]);
+        face1.setDiagonal(face1.face[0], face1.face[2]);
         cube.add(face1);
 
         
@@ -86,47 +86,47 @@ public class Cube extends Face {
         cubeVertex.add(face2.face[2]);
         face2.face[3] = addZ(face1.face[3],size);
         cubeVertex.add(face2.face[3]);
-        face2.midPoint = calcMidPoint(face2.face[0], face2.face[3]);
-        face2.setDiagonal(face2.face[0], face2.face[3]);
+        face2.midPoint = calcMidPoint(face2.face[0], face2.face[2]);
+        face2.setDiagonal(face2.face[0], face2.face[2]);
         cube.add(face2);
 
         // Calculate Cube Midpoint
-        this.setMidPoint(calcMidPoint(face1.face[0], face2.face[3]));
+        this.setMidPoint(calcMidPoint(face1.face[0], face2.face[2]));
         
         Face face3 = new Face();
         face3.face[0] = face1.face[0];
         face3.face[1] = face1.face[1];
-        face3.face[2] = face2.face[0];
-        face3.face[3] = face2.face[1];
-        face3.midPoint = calcMidPoint(face3.face[0], face3.face[3]);
-        face3.setDiagonal(face3.face[0], face3.face[3]);
+        face3.face[2] = face2.face[1];
+        face3.face[3] = face2.face[0];
+        face3.midPoint = calcMidPoint(face3.face[0], face3.face[2]);
+        face3.setDiagonal(face3.face[0], face3.face[2]);
         cube.add(face3);
 
         Face face4 = new Face();
         face4.face[0] = face1.face[1];
-        face4.face[1] = face1.face[3];
-        face4.face[2] = face2.face[1];
-        face4.face[3] = face2.face[3];
-        face4.midPoint = calcMidPoint(face4.face[0], face4.face[3]);
-        face4.setDiagonal(face4.face[0], face4.face[3]);
+        face4.face[1] = face1.face[2];
+        face4.face[2] = face2.face[2];
+        face4.face[3] = face2.face[1];
+        face4.midPoint = calcMidPoint(face4.face[0], face4.face[2]);
+        face4.setDiagonal(face4.face[0], face4.face[2]);
         cube.add(face4);
 
         Face face5 = new Face();
-        face5.face[0] = face1.face[3];
-        face5.face[1] = face1.face[2];
+        face5.face[0] = face1.face[2];
+        face5.face[1] = face1.face[3];
         face5.face[2] = face2.face[3];
         face5.face[3] = face2.face[2];
-        face5.midPoint = calcMidPoint(face5.face[0], face5.face[3]);
-        face5.setDiagonal(face5.face[0], face5.face[3]);
+        face5.midPoint = calcMidPoint(face5.face[0], face5.face[2]);
+        face5.setDiagonal(face5.face[0], face5.face[2]);
         cube.add(face5);
 
         Face face6 = new Face();
-        face6.face[0] = face1.face[2];
+        face6.face[0] = face1.face[3];
         face6.face[1] = face1.face[0];
-        face6.face[2] = face2.face[2];
-        face6.face[3] = face2.face[0];
-        face6.midPoint = calcMidPoint(face6.face[0], face6.face[3]);
-        face6.setDiagonal(face6.face[0], face6.face[3]);
+        face6.face[2] = face2.face[0];
+        face6.face[3] = face2.face[3];
+        face6.midPoint = calcMidPoint(face6.face[0], face6.face[2]);
+        face6.setDiagonal(face6.face[0], face6.face[2]);
         cube.add(face6);
 
         
@@ -308,6 +308,52 @@ public class Cube extends Face {
                 s += "Cube MidPoint:\n";
                 s += "" + this.getMidPoint() + "\n";
              break;
+             case "JSONARRAY":
+                s += "(JSON)\n";             
+                s += "{\n\"name\" : \"" + this.getName() + "\",\n"; 
+                s += "\"type\"  : \"cube\",\n";
+                s += "\"vertex\" : [\n";
+                k = 1;
+                for (Vertex v : this.getCubeVertex()){
+                    if (k < 8) {
+                        s += "\t["  + v.toString("JSONARRAY") + "],\n";
+                    } else {
+                        s += "\t["  + v.toString("JSONARRAY") + "]\n";
+                    }
+                    k++;
+                }
+                s += "],\n";
+                s += "\"midpoints\" : [\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    if (k < 6){
+                        s += "\t["  + face.toString("JSONMIDPOINT") + "],";
+                    } else {
+                        s += "\t["  + face.toString("JSONMIDPOINT") + "]\n";
+                    }
+                    k++;
+                }
+                s += "],\n";
+                // Face
+                s += "\"faces\" : [\n";
+                k = 1;
+                for (Face face : this.getCube()){
+                    if (k < 6){
+                        s += "["  + face.toString("JSONARRAY") + "],\n";
+                    } else {
+                        s += "["  + face.toString("JSONARRAY") + "]\n";
+                    }
+                    k++;
+                }
+                s += "\n],\n";
+
+                s += "\"midpoint\" : [\n";
+                s += "\t" + this.getMidPoint().toString("JSONARRAY") + "\n";             
+                s += "]\n";
+                s += "}\n";
+                s += "";
+
+            break;
         } 
         
         return s;

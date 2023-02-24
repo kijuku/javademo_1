@@ -69,22 +69,22 @@ public class Pyramid extends Triangle {
         pyramidVertex.add(face1.face[0]);
         face1.face[1] = addX(vertex,size);
         pyramidVertex.add(face1.face[1]);
-        face1.face[2] = addY(vertex,size);
+        face1.face[2] = addY(face1.face[1],size);
         pyramidVertex.add(face1.face[2]);
-        face1.face[3] = addY(face1.face[1],size);
+        face1.face[3] = addY(face1.face[0],size);
         pyramidVertex.add(face1.face[3]);
 
         // Calculate MidPoint
-        face1.midPoint = calcMidPoint(face1.face[0], face1.face[3]);
+        face1.midPoint = calcMidPoint(face1.face[0], face1.face[2]);
         this.setMidPoint(face1.midPoint);
 
-        face1.setDiagonal(face1.face[0], face1.face[3]);
+        face1.setDiagonal(face1.face[0], face1.face[2]);
 
         // Calculate side MidPoints
         this.sideMidVertex.add(calcMidPoint(face1.face[0], face1.face[1]));
-        this.sideMidVertex.add(calcMidPoint(face1.face[1], face1.face[3]));
+        this.sideMidVertex.add(calcMidPoint(face1.face[1], face1.face[2]));
         this.sideMidVertex.add(calcMidPoint(face1.face[2], face1.face[3]));
-        this.sideMidVertex.add(calcMidPoint(face1.face[0], face1.face[2]));
+        this.sideMidVertex.add(calcMidPoint(face1.face[3], face1.face[0]));
         
         // Calculate top Point
         topPoint = addZ(this.getMidPoint(), size);
@@ -92,13 +92,13 @@ public class Pyramid extends Triangle {
         Triangle tri1 = new Triangle(face1.face[0],face1.face[1],topPoint);
         this.pyramidFace.add(tri1);
   
-        Triangle tri2 = new Triangle(face1.face[1],face1.face[3],topPoint);
+        Triangle tri2 = new Triangle(face1.face[1],face1.face[2],topPoint);
         this.pyramidFace.add(tri2);
   
-        Triangle tri3 = new Triangle(face1.face[3],face1.face[2],topPoint);
+        Triangle tri3 = new Triangle(face1.face[2],face1.face[3],topPoint);
         this.pyramidFace.add(tri3);
   
-        Triangle tri4 = new Triangle(face1.face[2],face1.face[0],topPoint);
+        Triangle tri4 = new Triangle(face1.face[3],face1.face[0],topPoint);
         this.pyramidFace.add(tri4);
 
         // Set Bottom Face
@@ -191,6 +191,7 @@ public class Pyramid extends Triangle {
         return s;
     } 
     
+    // https://www.json.org/json-en.html
     //**********************************************************/
     public String toString(String format){
         String s = "";
@@ -252,6 +253,62 @@ public class Pyramid extends Triangle {
                 s += "\t}\n";
                 s += "";
             break;
+            case "JSONARRAY":
+            s += "(JSONARRAY)\n";             
+            s += "{\n\"name\" : \"" + this.getName() + "\",\n"; 
+            s += "\"type\"  : \"pyramid\",\n";
+            s += "\"vertex\" : [\n";
+            k = 1;
+            for (Vertex v : this.getPyramidVertex()){
+                if (k < 4) {
+                    s += "["  + v.toString("JSONARRAY") + "], ";
+                } else {
+                    s += "["  + v.toString("JSONARRAY") + "]\n";
+                }
+                k++;
+            }
+            s += "],\n";
+
+            
+            k = 1;
+            s += "\"faces\" : [\n";
+            
+            for (Triangle tri : this.getPyramidFace()) {
+                s += "[";
+                s += tri.toString("JSONARRAY");
+                if (k < 4) {
+                    s += "],";
+                } else {
+                    s += "]\n";
+                }
+                k++;
+            }
+            s += "],\n";
+            
+            k = 1;
+            s += "\"sidemidvertex\" : [\n";
+            for (Vertex ve : this.getSideMidVertex()) {
+                s += "[";
+                s += ve.toString("JSONARRAY");
+                if (k < 4) {
+                    s += "], \n";
+                } else {
+                    s += "] \n";
+                }
+                k++;
+            }
+            s += "],\n";
+            
+            s += "\"toppoint\" : [\n";
+            s += "" + this.getTopPoint().toString("JSONARRAY") + "\n";             
+            s += "],\n";
+            
+            s += "\"facemidpoint\" : [\n";
+            s += "" + this.getMidPoint().toString("JSONARRAY") + "\n";             
+            s += "\t\t]\n";
+            s += "\t}\n";
+            s += "";
+        break;
         } 
         
         return s;

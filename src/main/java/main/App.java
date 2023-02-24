@@ -258,22 +258,23 @@ public class App {
         System.out.println("ROTATE Y: " + v3.rotate("Y", Math.PI/2));
         System.out.println("ROTATE Z: " + v3.rotate("Z", Math.PI/2));
 
+        //System.out.println(cube.toString("Diagonal"));
+        Point p3 = new Point(0.0f, 0.0f, 0.0f);
+        Cube cube = new Cube(p3, 100.0D);
+        
+        
         System.out.println("Cube:");
         System.out.println("\n**********************************************************");
         
-        Point p3 = new Point(0.0f, 0.0f, 0.0f);
-        Cube cube = new Cube(p3, 100.0D);
         System.out.println(cube);
         System.out.println(cube.toString("Vertex"));
         System.out.println(cube.toString("Midpoint"));
         System.out.println(cube.toString("Cubemidpoint"));
         System.out.println("\n**********************************************************");
-        System.out.println(cube.toString("JSON"));
-
-        //System.out.println(cube.toString("Diagonal"));
-
-        Pyramid pyramid = new Pyramid(p3, 1.5D);
-        System.out.println(pyramid.toString("JSON"));
+        
+        Pyramid pyramid = new Pyramid(p3, 10.0D);
+        System.out.println(pyramid.toString("JSONARRAY"));
+        System.out.println(cube.toString("JSONARRAY"));
     }
 }
     

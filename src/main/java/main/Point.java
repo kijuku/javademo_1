@@ -105,6 +105,13 @@ public class Point implements Serializable {
                 s += "\"z\" : "+ this.getZ();
                 s += "}\n  ";
             break;
+            case "JSONARRAY":
+                s += "";
+                s += ""+ this.getX() + ",";
+                s += ""+ this.getY() + ",";
+                s += ""+ this.getZ();
+                s += "";
+            break;
             default:
             break;
             

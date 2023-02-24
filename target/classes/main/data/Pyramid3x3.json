@@ -1,0 +1,140 @@
+{
+  "name": "Default pyramid",
+  "type": "pyramid",
+  "Vertex": {
+    "Vertex 1": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 2": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 3": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "Vertex 4": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    }
+  },
+  "Pyramid Triangle Faces1": {
+    "TriangleFace1": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace2": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace3": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 3.0
+      }
+    }
+  },
+  "Pyramid Triangle Faces2": {
+    "TriangleFace1": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace2": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace3": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 3.0
+      }
+    }
+  },
+  "Pyramid Triangle Faces3": {
+    "TriangleFace1": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace2": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace3": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 3.0
+      }
+    }
+  },
+  "Pyramid Triangle Faces4": {
+    "TriangleFace1": {
+      "coodinate": {
+        "x": 3.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace2": {
+      "coodinate": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "TriangleFace3": {
+      "coodinate": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 3.0
+      }
+    }
+  },
+  "Pyramid TopPoint": {
+    "coodinate": {
+      "x": 1.5,
+      "y": 1.5,
+      "z": 3.0
+    }
+  },
+  "Pyramid Face MidPoint": {
+    "coodinate": {
+      "x": 1.5,
+      "y": 1.5,
+      "z": 0.0
+    }
+  }
+}

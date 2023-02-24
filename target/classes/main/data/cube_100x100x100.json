@@ -1,0 +1,295 @@
+{
+  "name": "default Cube",
+  "type": "cube",
+  "Vertex": {
+    "Vertex 1": {
+      "coodinate": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Vertex 2": {
+      "coodinate": [
+        100.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Vertex 3": {
+      "coodinate": [
+        0.0,
+        100.0,
+        0.0
+      ]
+    },
+    "Vertex 4": {
+      "coodinate": [
+        100.0,
+        100.0,
+        0.0
+      ]
+    },
+    "Vertex 5": {
+      "coodinate": [
+        0.0,
+        0.0,
+        100.0
+      ]
+    },
+    "Vertex 6": {
+      "coodinate": [
+        100.0,
+        0.0,
+        100.0
+      ]
+    },
+    "Vertex 7": {
+      "coodinate": [
+        0.0,
+        100.0,
+        100.0
+      ]
+    },
+    "Vertex 8": {
+      "coodinate": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    }
+  },
+  "MidPoints": {
+    "Face 1 MidPoint": {
+      "coodinate": [
+        50.0,
+        50.0,
+        0.0
+      ]
+    },
+    "Face 2 MidPoint": {
+      "coodinate": [
+        50.0,
+        50.0,
+        100.0
+      ]
+    },
+    "Face 3 MidPoint": {
+      "coodinate": [
+        50.0,
+        0.0,
+        50.0
+      ]
+    },
+    "Face 4 MidPoint": {
+      "coodinate": [
+        100.0,
+        50.0,
+        50.0
+      ]
+    },
+    "Face 5 MidPoint": {
+      "coodinate": [
+        50.0,
+        100.0,
+        50.0
+      ]
+    },
+    "Face 6 MidPoint": {
+      "coodinate": [
+        0.0,
+        50.0,
+        50.0
+      ]
+    }
+  },
+  "Faces": {
+    "Face 1": {
+      "FaceVertex1": {
+        "coodinate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "FaceVertex2": {
+        "coodinate": [
+          100.0,
+          0.0,
+          0.0
+        ]
+      },
+      "FaceVertex3": {
+        "coodinate": [
+          0.0,
+          100.0,
+          0.0
+        ]
+      },
+      "FaceVertex4": {
+        "coodinate": [
+          100.0,
+          100.0,
+          0.0
+        ]
+      }
+    },
+    "Face 2": {
+      "FaceVertex1": {
+        "coodinate": [
+          0.0,
+          0.0,
+          100.0
+        ]
+      },
+      "FaceVertex2": {
+        "coodinate": [
+          100.0,
+          0.0,
+          100.0
+        ]
+      },
+      "FaceVertex3": {
+        "coodinate": [
+          0.0,
+          100.0,
+          100.0
+        ]
+      },
+      "FaceVertex4": {
+        "coodinate": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      }
+    },
+    "Face 3": {
+      "FaceVertex1": {
+        "coodinate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "FaceVertex2": {
+        "coodinate": [
+          100.0,
+          0.0,
+          0.0
+        ]
+      },
+      "FaceVertex3": {
+        "coodinate": [
+          0.0,
+          0.0,
+          100.0
+        ]
+      },
+      "FaceVertex4": {
+        "coodinate": [
+          100.0,
+          0.0,
+          100.0
+        ]
+      }
+    },
+    "Face 4": {
+      "FaceVertex1": {
+        "coodinate": [
+          100.0,
+          0.0,
+          0.0
+        ]
+      },
+      "FaceVertex2": {
+        "coodinate": [
+          100.0,
+          100.0,
+          0.0
+        ]
+      },
+      "FaceVertex3": {
+        "coodinate": [
+          100.0,
+          0.0,
+          100.0
+        ]
+      },
+      "FaceVertex4": {
+        "coodinate": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      }
+    },
+    "Face 5": {
+      "FaceVertex1": {
+        "coodinate": [
+          100.0,
+          100.0,
+          0.0
+        ]
+      },
+      "FaceVertex2": {
+        "coodinate": [
+          0.0,
+          100.0,
+          0.0
+        ]
+      },
+      "FaceVertex3": {
+        "coodinate": [
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "FaceVertex4": {
+        "coodinate": [
+          0.0,
+          100.0,
+          100.0
+        ]
+      }
+    },
+    "Face 6": {
+      "FaceVertex1": {
+        "coodinate": [
+          0.0,
+          100.0,
+          0.0
+        ]
+      },
+      "FaceVertex2": {
+        "coodinate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "FaceVertex3": {
+        "coodinate": [
+          0.0,
+          100.0,
+          100.0
+        ]
+      },
+      "FaceVertex4": {
+        "coodinate": [
+          0.0,
+          0.0,
+          100.0
+        ]
+      }
+    }
+  },
+  "Cube MidPoint": {
+    "coodinate": [
+      50.0,
+      50.0,
+      50.0
+    ]
+  }
+}
